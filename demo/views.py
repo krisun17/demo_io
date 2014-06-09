@@ -29,5 +29,5 @@ def get_results(request):
         if (score >= max_score):
             max_score = score
             best_index = i
-    return HttpResponse(archetypes[i].desc())
+    return HttpResponse(archetypes[best_index].desc())
 
