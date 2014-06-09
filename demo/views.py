@@ -13,7 +13,7 @@ def main(request):
 def get_results(request):
     file = open('demo/oceny.json')
     data = json.loads(file.read())
-    form = MainForm(request.POST)
+    form = MainForm(request.GET)
     form.is_valid()
     scores = {}
     for key in form.cleaned_data:
