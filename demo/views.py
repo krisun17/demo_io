@@ -29,5 +29,5 @@ def get_results(request):
         if (score >= max_score):
             max_score = score
             best_index = i
-    return HttpResponse(archetypes[best_index].desc())
+    return render(request, 'archetype.html', archetypes[best_index].get_context_data())
 

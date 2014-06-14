@@ -16,14 +16,14 @@
         </form>
       </div>
       <div class="col-lg-6">
-        <div class="well" id="result"></div>
+        <div id="result"></div>
       </div>
     </div>
 
   <script>
   $(document).ready(function () {
     var options = {
-      target: '#result'   // target element(s) to be updated with server response
+      target: '#result',   // target element(s) to be updated with server response
 
       // other available options:
       //url:       url         // override for form's 'action' attribute
@@ -34,6 +34,7 @@
 
       // $.ajax options can be used here too, for example:
       //timeout:   3000
+      beforeSubmit: function() {$('#result').html('...');}
     };
 
     // bind form using 'ajaxForm'
