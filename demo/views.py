@@ -1,8 +1,8 @@
-from django.http import HttpResponse
 from django.shortcuts import render
-from demo.forms import *
-import datetime
 from django.template import *
+
+from demo.forms import *
+
 
 # Create your views here.
 
@@ -48,31 +48,22 @@ SELECT * FROM OPENQUERY(DMServer,
 #tylko to zmieniamy
 ##################################
  """
-  (Predict([Student].[ALG])) as [alg],
-  PredictProbability([Student].[ALG],
-  Predict([Student].[ALT])) as [alt],
-  PredictProbability([Student].[ALT],
-  Predict([Student].[PLO])) as [plo],
-  PredictProbability([Student].[PLO],
-  Predict([Student].[SUS])) as [sus],
-  PredictProbability([Student].[SUS],
-  Predict([Student].[SID])) as [sid],
-  PredictProbability([Student].[SID],
-  Predict([Student].[WWK])) as [wwk],
-  PredictProbability([Student].[WWWK],
-  Predict([Student].[WSS])) as [wss],
-  PredictProbability([Student].[WSS],
-  Predict([Student].[BO])) as [bo],
-  PredictProbability([Student].[BO],
-  Predict([Student].[ZBD])) as [zbd],
-  PredictProbability([Student].[zbd],
-  Predict([Student].[ZSO])) as [zso],
-  PredictProbability([Student].[ZSO])
+  (Predict([Student].[ALG])) as [ALG],
+  (Predict([Student].[ALT])) as [ALT],
+  (Predict([Student].[BO])) as [BO],
+  (Predict([Student].[PLO])) as [PLO],
+  (Predict([Student].[SID])) as [SID],
+  (Predict([Student].[SUS])) as [SUS],
+  (Predict([Student].[TINF])) as [TINF],
+  (Predict([Student].[WSS])) as [WSS],
+  (Predict([Student].[WWK])) as [WWK],
+  (Predict([Student].[ZBD])) as [ZBD],
+  (Predict([Student].[ZSO])) as [ZSO]
 """
-###########################
-#dotad
-###########################
-"""
+                     # ##########################
+                     #dotad
+                     ###########################
+ """
 From
   [Student]
 NATURAL PREDICTION JOIN
