@@ -10,10 +10,36 @@ from django.template import *;
 # Create your views here.
 
 def main(request):
-    print(get_data({
-        'Analiza1' : 10,
-        #do tego slownika trzeba wrzucic wyniki formularza
-    }))
+    if request.method == 'POST'
+        form = MainForm(request.POST) 
+        if form.is_valid():
+            print(get_data({
+                'Analiza1' : form.cleaned_data['Analiza1'],
+                'Pmat' : form.cleaned_data['PMAT'],
+                'WPI' : form.cleaned_data['WP'],
+                'GAL' : form.cleaned_data['GAL'],
+                'Analiza2' : form.cleaned_data['AM2'],
+                'MD' : form.cleaned_data['MD'],
+                'IPP' : form.cleaned_data['IPP'],
+                'PO' : form.cleaned_data['PO'],
+                'AKS' : form.cleaned_data['AKS'],
+                'JNP1' : form.cleaned_data['JNP1'],
+                'ASD' : form.cleaned_data['ASD'],
+                'RPiS' : form.cleaned_data['RPiS'],
+                'BD' : form.cleaned_data['BD'],
+                'SO' : form.cleaned_data['SO'],
+                'SIK' : form.cleaned_data['SIK'],
+                'JAO' : form.cleaned_data['JAO'],
+                'WWW' : form.cleaned_data['WWW'],
+                'IO' : form.cleaned_data['IO'],
+                'JNP2' : form.cleaned_data['JNP2'],
+                'Pmat' : form.cleaned_data['PMAT']
+                #do tego slownika trzeba wrzucic wyniki formularza
+            }))
+            # return HttpResponseRedirect('/thanks/')
+    else
+        form = MainForm()
+    
     return render(request, 'main.html', {'form': MainForm()})
 
 def get_results(request):
@@ -45,7 +71,7 @@ NATURAL PREDICTION JOIN
   {{ MNUM }} AS [MNUM],
   {{ Pmat }} AS [Pmat],
   {{ PO }} AS [PO],
-  {{ RPiS }} AS [R Pi S],
+  {{ RPiS }} AS [RPiS],
   {{ SIK }} AS [SIK],
   {{ SO }} AS [SO],
   {{ SWP }} AS [SWP],
