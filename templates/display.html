@@ -1,3 +1,21 @@
-{% for x, y in res.items %}
-  {{ x }}: {{ y }} <br/>
-{% endfor %}
+{% extends 'empty.html' %}
+{% block content %}
+
+<table class="table">
+  <thead>
+    <tr class="active">
+      <th>Przedmiot Obieralny</th>
+      <th>Przewidywana Ocena</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for x, y in res.items %}
+      <tr class="success">  
+        <th> {{ x }} </th>
+        <th> {{ y }} </th>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
