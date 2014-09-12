@@ -2,14 +2,14 @@ from django.forms import *
 
 class MainForm(Form):
     choices=(
-            ('', '---'),
-            (7, '5.5'),
-            (6, '5'),
-            (5, '4.5'),
-            (4, '4'),
-            (3, '3.5'),
-            (2, '3'),
-            (1, '2'),
+            (4, '---'),
+            (11, '5.5'),
+            (10, '5'),
+            (9, '4.5'),
+            (8, '4'),
+            (7, '3.5'),
+            (6, '3'),
+            (5, '2'),
         )
 
     PMAT = ChoiceField(required=False, choices=choices)
