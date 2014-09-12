@@ -49,7 +49,25 @@ SELECT * FROM OPENQUERY(DMServer,
 ##################################
  """
   (Predict([Student].[ALG])) as [alg],
-  PredictProbability([Student].[ALG])
+  PredictProbability([Student].[ALG],
+  Predict([Student].[ALT])) as [alt],
+  PredictProbability([Student].[ALT],
+  Predict([Student].[PLO])) as [plo],
+  PredictProbability([Student].[PLO],
+  Predict([Student].[SUS])) as [sus],
+  PredictProbability([Student].[SUS],
+  Predict([Student].[SID])) as [sid],
+  PredictProbability([Student].[SID],
+  Predict([Student].[WWK])) as [wwk],
+  PredictProbability([Student].[WWWK],
+  Predict([Student].[WSS])) as [wss],
+  PredictProbability([Student].[WSS],
+  Predict([Student].[BO])) as [bo],
+  PredictProbability([Student].[BO],
+  Predict([Student].[ZBD])) as [zbd],
+  PredictProbability([Student].[zbd],
+  Predict([Student].[ZSO])) as [zso],
+  PredictProbability([Student].[ZSO])
 """
 ###########################
 #dotad
