@@ -37,7 +37,14 @@ def get_results(request):
             'Pmat' : form.cleaned_data['PMAT']
             #do tego slownika trzeba wrzucic wyniki formularza
         })
-    return render(request, 'display.html', {'res': res[0]})
+        sorted_sub = sorted(res[0].items(), key=lambda x: x[1])
+        for x in sorted_sub:
+            if x[1] == 4:
+                sorted_sub.remove(x)
+        ''' for x in res.keys():
+            res[x] = res[x]/2'''
+        # nie wiem czemu to na górze nie działa :/
+    return render(request, 'display.html', {'res': res[0], 'sorted_sub': sorted_sub})
     #return render(request, 'archetype.html', archetypes[best_index].get_context_data())
 
 sql_query = Template("""
