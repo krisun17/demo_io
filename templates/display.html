@@ -1,17 +1,44 @@
-<table class="table">
-  <thead>
-    <tr class="active">
-      <th>Przedmiot Obieralny</th>
-      <th>Przewidywana Ocena</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for x, y in res.items %}
-      <tr class="success">  
-        <th> {{ x }} </th>
-        <th> {{ y }} </th>
-      </tr>
-    {% endfor %}
-  </tbody>
-</table>
+<div class="row">
+    <div class ="col-lg-6">
+        <label>Przewidywane oceny      </label>
+        <table class="table">
+            <thead>
+                <tr class="active">
+                    <th>Przedmiot Obieralny</th>
+                    <th>Przewidywana Ocena</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for x, y in res.items %}
+                <tr class="success">  
+                    <th> {{ x }} </th>
+                    <th> {{ y }} </th>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="col-lg-6">
+        <label>Proponowane przedmioty</label>
+        <table class="table">
+            <thead>
+                <tr class="active">
+                    <th>Przedmiot</th>
+                    <th>Przewidywana Ocena</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for x in sorted_sub %}
+                <tr class="success">
+                    {% for y in x %}
+                        <th> {{ y }} </th>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
 
